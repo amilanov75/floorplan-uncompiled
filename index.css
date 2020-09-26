@@ -1,0 +1,269 @@
+/* Cloak elements on initial load to hide the possible display of {{ ... }} 
+ * Add to the app tag or to specific tags
+ * To display "loading...", change to the following:
+ *    [v-cloak] > * { display:none }
+ *    [v-cloak]::before { content: "loading…" }
+ */
+ [v-cloak]::before { content: "loading…" }
+ 
+/*  Colours for Syntax Highlighted pre's */
+.syntax-highlight {color:white;background-color:black;padding:5px 10px;}
+.syntax-highlight > .key {color:#ffbf35}
+.syntax-highlight > .string {color:#5dff39;}
+.syntax-highlight > .number {color:#70aeff;}
+.syntax-highlight > .boolean {color:#b993ff;}
+ 
+:root{
+  --body-background-colour: #1c1c1c;
+  --card-background-colour: #1f1f1f;
+  --button-background-colour: #2e2e2e;
+  
+  --box-shadow: #000;
+  --box-shadow-buttons: #0f0f0f;
+  --popover-background-colour: #fff;
+
+/**************** LIGHT POSITIONS X,Y *******************/
+  --button_adj: -8px;
+  --value_adj:  24px;
+  --kitcabinet_left: 1328px;
+  --kitcabinet_top:   360px;
+}
+
+
+
+/*WEB PAGE BODY FORMATS*/
+body {
+  background-color: var(--body-background-colour);
+  font-family: "helvetica";
+  font-size: 15px;
+}
+
+
+
+/**************** INTERACTIVE LIGHTS *******************/
+/* BUTTONS HIDDEN BEHIND LIGHTS ON FLOOR PLAN */
+.btn-primary-outline {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: 0 0 0 0 #1c1c1c !important;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+/* LIGHT BRIGHTNESS VALUE NEXT TO LIGHT BULB */
+.light_brightness {
+  font-size: 90% !important; 
+  color: #383737;
+}
+.fa-superpowers{
+  font-size: 20px !important; 
+}
+.zone_time_left{
+  font-size: 70% !important; 
+  color: #545454;
+}
+.light_name{
+  color: #616161;
+  font-size: 70%;
+}
+/**************** INTERACTIVE LIGHTS *******************/
+
+
+
+/**************** LIGHTING SCENES *******************/
+.fa-television{
+  color: #404040;
+}
+.fa-desktop{
+  color: #404040;
+}
+.fa-cutlery{
+  color: #404040;
+}
+.fa-square{
+  transform: scale(1.3,.7);
+}
+.skylight{
+  transform: scale(1.3,.7);
+}
+.fa-window-minimize{
+  transform: scale(1.1,1); 
+}
+
+/**************** SENSORS *******************/
+.sensors{
+  color: #000;
+  font-size: 70%;
+}
+.fa-thermometer-empty{
+  color: #000;
+}
+
+
+
+
+
+/**************** LIGHTING CIRCUIT DESCRIPTION POPUP WINDOW *******************/
+/* POP-UP BOX FOR LIGHTS ON FLOOR PLAN - f0f0f0*/
+.popover {
+  border: 2px transparent;
+  background-color: var(--popover-background-colour);
+  font-size: 12px;
+}
+.popover .arrow {
+  display: none;
+}
+
+
+
+/**************** CARDS *******************/
+/*****************MENU HEADER AT TOP OF THE SCREEN*************/
+.header-card {
+  color:#ffffff;  
+  background-color: var(--body-background-colour);
+  font-size: 22px;
+  height: 53px;
+  box-shadow: 0 5px 12px 0 var(--box-shadow);
+  align-content: center;
+  /*text-shadow: 10px 1px 8px #000"*/  
+}
+
+/*****************ALL THE INPUT CARDS BELOW THE FLOOR PLAN*****/
+.input-card{
+  background-color: var(--card-background-colour);
+  box-shadow: 0 5px 12px 0 var(--box-shadow);
+  border-radius:.15rem!important;
+}
+
+
+
+
+/**************** MENU SIDEBAR *******************/
+/* SIDEBAR */
+.my-sidebar .b-sidebar {
+  background-color: var(--body-background-colour); 
+  color: var(--body-background-colour); 
+  box-shadow: 0 5px 18px 0 var(--box-shadow) !important;
+  height: 95vh !important;
+  top:53px;
+}
+
+.my-sidebar .b-sidebar-body {
+  background-color: var(--body-background-colour); 
+}
+
+
+
+/**************** BUTTONS *******************/
+/* MENU 3x VETICAL BAR HIDDEN BUTTON */
+.btn-default {
+  background-color:transparent; 
+  color:transparent; 
+  position:absolute; 
+  width: 100px; 
+  height:50px; 
+  left:0px; 
+  top:0px;
+  box-shadow: 0 0 0 0 #1c1c1c !important;
+}
+
+/* MAIN BUTTONS USED EVERYWHERE */
+button{
+  color: #c2c2c2;
+  background-color: var(--button-background-colour);
+  border: transparent;
+  border-radius: 4px;
+  font-size:13px;
+  padding: 4px 20px;
+  width: 80%;
+  box-shadow: 0 10px 12px 0 var(--box-shadow-buttons) !important;
+}
+/* MAIN BUTTONS USED EVERYWHERE - COLOUR INPUT BUTTONS ONLY*/
+.c-button{
+  border: transparent;
+  border-radius: 4px;
+  font-size:13px;
+  padding: 4px 20px;
+  width: 80%;
+  box-shadow: 0 10px 12px 0 var(--box-shadow-buttons) !important;
+}
+
+/* CLOSE BUTTON THAT APPEAR WHEN THE SIDEBAR OPENS */
+.sidebar-close-button {
+  background-color: var(--card-background-colour); 
+  border: transparent;
+  width:320px;
+  border-radius: 0;
+}
+
+
+/*animation:fa-beat 3s ease infinite;*/
+/*ANIMATIONS LIST: https://www.vuetoolbox.com/projects/vue2-animate */
+
+.fa-beat {
+  animation:fa-beat 2s;
+}
+@keyframes fa-beat {
+  0% {
+    transform:scale(3);
+  }
+  33% {
+    transform:scale(1);
+  }
+  660% {
+    transform:scale(3);
+  }
+}
+
+.fa-beat2 {
+  animation:fa-beat2 5s;
+}
+  @keyframes fa-beat2 {
+    0% {
+      transform:scale(2);
+    }
+    33% {
+      transform:scale(1);
+    }
+    660% {
+      transform:scale(2);
+    }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+/*@keyframes fa-beat 
+  0% {
+    transform:scale(3,1);
+  }
+  5% {
+    transform:scale(4.5,1.5);
+  }
+  20% {
+    transform:scale(3,1);
+  }
+  30% {
+    transform:scale(3,1);
+  }
+  35% {
+    transform:scale(4.5,1.5);
+  }
+  50% {
+    transform:scale(3,1);
+  }
+  55% {
+    transform:scale(4.5,1.5);
+  }
+  100% {
+    transform:scale(3,1);
+  }
+}
+*/
+
+
